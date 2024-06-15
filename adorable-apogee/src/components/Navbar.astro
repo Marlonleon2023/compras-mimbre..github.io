@@ -1,0 +1,96 @@
+<header class="header">
+    <div class="logo-header">
+        <a class="log" href="">Canastas de Mimbre</a>
+    </div>
+    <nav>
+        <ul aria-label="main-header">
+            <li><a href="">Inicio</a></li>
+            <li><a href="">Productos</a></li>
+            <li><a href="">Nosotros</a></li>
+            <li class="user-menu">
+                <a href="#"><i class="fa-solid fa-user" style="color: #525252;"></i></a>
+                <div class="dropdown-menu">
+                    <a href="/pages/iniciar-sesion.html">Iniciar sesión</a>
+                    <a href="/pages/registrarse.html">Registrarse</a>
+                </div>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-cart-shopping" style="color: #525252;"></i><span class="cart-num" data-v-52919899="">0</span></a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+
+<style>
+    .cart-num{
+        padding-left: 3px;
+    }
+    .header {
+    display: flex;
+    justify-content: space-around;
+    color: rgb(var(--white));
+    text-align: center;
+    position: relative;
+}
+
+header nav ul {
+    margin-top: 30px;
+    font-size: 20px;
+    display: flex;
+    gap: 4rem;
+    list-style: none;
+}
+
+header nav ul li a {
+    color: rgb(0, 0, 0);
+    display: block;
+    padding: 0.73rem 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+}
+
+.user-menu {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f6f6f6;
+}
+
+/* Mostrar el menú emergente al pasar el cursor */
+.user-menu:hover .dropdown-menu {
+    display: block;
+}
+
+
+
+</style>
+
+
+<script
+src="https://kit.fontawesome.com/72c31be9da.js"
+crossorigin="anonymous"></script>

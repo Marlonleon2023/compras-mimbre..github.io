@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Navbar from '../components/Navbar.astro';
+import "../styles/style.css"
+---
+
+<Layout title="Canastas De Mimbre">
+	<Navbar/>
+	
+		<section class="image-logo">
+			<div class="imagen-portada">
+			<img src="/public/images/canasta-sin-fondo.png" alt="">
+   		</div>
+		<div>
+		<h3 class="texto-portada">Conoce Nuestros Productos</h3>
+		<button>Informacion</button>
+	</div>	
+</section>
+	
+	<section class="novedades">
+		<h2>Novedades</h2>
+		<div class="categorias">
+		<div class="categoria-1">
+			<div class="image-categaria1">
+			<img src="/public/images/canis.png" alt="">
+			</div>
+			<div class="categori-txt">
+			<h2>Tamaño</h2>
+			<a class="btn2" href="">Informacion</a>
+			</div>
+
+		</div>
+
+		<div class="categoria-1">
+			<div class="image-categaria1">
+			<img src="/public/images/canis.png" alt="">
+			</div>
+			<div class="categori-txt">
+			<h2>Tamaño</h2>
+			<a class="btn2" href="">Informacion</a>
+			</div>
+
+		</div>
+
+		<div class="categoria-1">
+			<div class="image-categaria1">
+			<img src="/public/images/canis.png" alt="">
+			</div>
+			<div class="categori-txt">
+			<h2>Tamaño</h2>
+			<a class="btn2" href="">Informacion</a>
+			</div>
+
+		</div>
+	</div>
+	</section>
+	
+		<main class="producto contenid ">
+		<h2>Productos</h2>
+
+		<div class="productos-contenido">
+			<div class="productos">
+				<img src="/public/images/canasta1.png" alt="">
+					<h3>Elissud</h3>
+					<p>Calidad premium</p>
+					<p class="precio">90.000$</p>
+					<a href="#" class="agregar-carrito btn2">Agregar al Carrito</a>
+			</div>
+			
+
+			<div class="productos">
+				<img src="/public/images/canasta2.png" alt="">
+				<h3>Elissud</h3>
+				<p>Calidad premium</p>
+				<p class="precio">90.000$</p>
+				<a href="#" class="agregar-carrito btn2">Agregar al Carrito</a>
+			</div>
+			
+
+			<div class="productos">
+				<img src="/public/images/canasta3.png" alt="">
+				<h3>Elissud</h3>
+				<p>Calidad premium</p>
+				<p class="precio">90.000$</p>
+				<a href="#" class="agregar-carrito btn2">Agregar al Carrito</a>
+			</div>
+
+			<div class="productos">
+				<img src="/public/images/canasta4.png" alt="">
+				<h3>Elissud</h3>
+				<p>Calidad premium</p>
+				<p class="precio">90.000$</p>
+				<a href="#" class="agregar-carrito btn2">Agregar al Carrito</a>
+			</div>
+			
+
+			<div class="productos">
+				<img src="/public/images/canasta5.png" alt="">
+				<h3>Elissud</h3>
+				<p>Calidad premium</p>
+				<p class="precio">90.000$</p>
+				<a href="#" class="agregar-carrito btn2">Agregar al Carrito</a>
+			</div>
+			
+
+			<div class="productos">
+				<img src="/public/images/canasta6.png" alt="">
+				<h3>Elissud</h3>
+				<p>Calidad premium</p>
+				<p class="precio">90.000$</p>
+				<a href="#" class="agregar-carrito btn2">Agregar al Carrito</a>
+			</div>
+			
+
+		</div>
+	</main>
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="https://docs.astro.build/"
+				title="Documentation"
+				body="Learn how Astro works and explore the official API docs."
+			/>
+			<Card
+				href="https://astro.build/integrations/"
+				title="Integrations"
+				body="Supercharge your project with new frameworks and libraries."
+			/>
+			<Card
+				href="https://astro.build/themes/"
+				title="Themes"
+				body="Explore a galaxy of community-built starter themes."
+			/>
+			<Card
+				href="https://astro.build/chat/"
+				title="Community"
+				body="Come say hi to our amazing Discord community. ❤️"
+			/>
+		</ul>
+	
+</Layout>
+

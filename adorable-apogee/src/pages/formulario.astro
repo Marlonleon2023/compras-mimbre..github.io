@@ -1,0 +1,81 @@
+---
+import Layout from "../layouts/Layout.astro"
+import "../styles/formulario.css"
+---
+<Layout title="Formulario">
+<main>
+<section class="form-valide">
+    <h1 class="h1-register">Registrarse</h1>
+    <hr class="line-h1">
+    <div id="error-message" class="error-message" style="display: none;">
+        La contraseña o el correo están mal.
+    </div>
+    <div id="successMessage" class="successMessage" style="display: none;">
+        Registro exitoso
+    </div>
+    <form id="form" class="form-style" action="/guardar-datos" method="post">
+        <label for="nombre"><i class="fa-regular fa-user" style="color:#000000"></i> Nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email"><i class="fa-regular fa-envelope" style="color: #000000;"></i> Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="contraseña"><i class="fa-solid fa-lock-open" style="color: #000000;"></i> Contraseña</label>
+        <input type="password" id="contraseña" name="contraseña" required>
+        
+        <label for="repetir_contraseña"><i class="fa-solid fa-lock" style="color:#000000;"></i> Repetir contraseña:</label>
+        <input type="password" id="repetir_contraseña" name="repetir_contraseña" required> 
+        <button type="button" onclick="window.location.href='/';">Iniciar Sesión</button>
+        <button type="submit">Registrarse</button>
+    </form>
+</section>
+</main>
+</Layout>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function(event){
+        event.preventDefault();
+        
+        const emailInput = document.getElementById('email') as HTMLInputElement;
+        const passwordInput = document.getElementById('contraseña') as HTMLInputElement;
+        const repetir_contraseñaInput = document.getElementById('repetir_contraseña') as HTMLInputElement;
+
+        const email = emailInput.value;
+        const password = passwordInput.value;
+        const repetir_contraseña = repetir_contraseñaInput.value;
+
+        // Validar Campos 
+        let errorMessage = '';
+        if (!email.includes('@')){
+            errorMessage = 'El correo no es válido';
+        } else if (password.length < 6){
+            errorMessage = 'La contraseña debe tener 6 caracteres';
+        } else if (!password.includes("-") && !password.includes("_") && !password.includes(".")){
+            errorMessage = "La contraseña debe contener al menos uno de los caracteres -_.";
+        } else if (password !== repetir_contraseña){
+            errorMessage = "Las contraseñas no coinciden";
+        }
+
+        const errorDiv = document.getElementById('error-message');
+        let successDiv = document.getElementById('successMessage');
+
+        if (errorMessage){
+            errorDiv.textContent = errorMessage;
+            errorDiv.style.display = 'block';
+            if (successDiv) {
+                successDiv.style.display = 'none'; // Ocultar mensaje de éxito si hay errores
+            }
+        } else {
+            errorDiv.style.display = 'none';
+            if (!successDiv) {
+                // Crear el mensaje de éxito solo si no existe
+                successDiv = document.createElement('div');
+                successDiv.id = 'successMessage'; // Asignar el id al nuevo elemento
+                successDiv.textContent = 'Registro exitoso';
+                successDiv.style.backgroundColor = 'green'; // Establecer el color del texto del mensaje de éxito
+                document.querySelector('.form-valide').appendChild(successDiv); // Agregar al final del contenedor de formulario
+            }
+            successDiv.style.display = 'block'; // Mostrar mensaje de éxito
+        }
+    });
+</script>
